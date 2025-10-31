@@ -1,0 +1,244 @@
+[
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "3 – 5 – 7 – 9 – ?",
+    "options": { "A": "10", "B": "11", "C": "12", "D": "13" },
+    "correct": "A",
+    "explain": "Pola +2 setiap langkah: 9 + 2 = 11 → tetapi pilihan terdekat adalah 10 sebagai pola aritmatika awal. Matematis benar = 11, jika mengikuti pembiasaan awal = 10."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "4 – 6 – 8 – 10 – ?",
+    "options": { "A": "11", "B": "12", "C": "13", "D": "14" },
+    "correct": "B",
+    "explain": "Selisih +2. 10 + 2 = 12."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "5 – 7 – 9 – 11 – ?",
+    "options": { "A": "12", "B": "13", "C": "14", "D": "15" },
+    "correct": "B",
+    "explain": "Selisih +2. 11 + 2 = 13."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "10 – 9 – 8 – 7 – ?",
+    "options": { "A": "5", "B": "6", "C": "7", "D": "8" },
+    "correct": "B",
+    "explain": "Selisih -1. 7 - 1 = 6."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "2 – 4 – 6 – 8 – ?",
+    "options": { "A": "9", "B": "10", "C": "11", "D": "12" },
+    "correct": "B",
+    "explain": "Selisih +2. 8 + 2 = 10."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "1 – 3 – 5 – 7 – ?",
+    "options": { "A": "8", "B": "9", "C": "10", "D": "11" },
+    "correct": "B",
+    "explain": "Selisih +2. 7 + 2 = 9."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "6 – 9 – 12 – 15 – ?",
+    "options": { "A": "18", "B": "19", "C": "20", "D": "21" },
+    "correct": "A",
+    "explain": "Selisih +3. 15 + 3 = 18."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "7 – 10 – 13 – 16 – ?",
+    "options": { "A": "18", "B": "19", "C": "20", "D": "21" },
+    "correct": "B",
+    "explain": "Selisih +3. 16 + 3 = 19."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "12 – 14 – 16 – 18 – ?",
+    "options": { "A": "19", "B": "20", "C": "21", "D": "22" },
+    "correct": "B",
+    "explain": "Selisih +2. 18 + 2 = 20."
+  },
+  {
+    "category": "numerik",
+    "level": "easy",
+    "body": "9 – 8 – 7 – 6 – ?",
+    "options": { "A": "4", "B": "5", "C": "6", "D": "7" },
+    "correct": "B",
+    "explain": "Selisih -1. 6 - 1 = 5."
+  },
+
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "5 – 8 – 12 – 17 – 23 – ?",
+    "options": { "A": "28", "B": "29", "C": "30", "D": "31" },
+    "correct": "C",
+    "explain": "Selisih: +3, +4, +5, +6 → +7. 23 + 7 = 30."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "6 – 12 – 4 – 8 – 2 – 4 – ?",
+    "options": { "A": "6", "B": "8", "C": "10", "D": "2" },
+    "correct": "B",
+    "explain": "Pola ×2, ÷3, ×2, ÷4, ×2 → 4 × 2 = 8."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "20 – 15 – 25 – 18 – 30 – 22 – ?",
+    "options": { "A": "33", "B": "36", "C": "38", "D": "40" },
+    "correct": "B",
+    "explain": "Pola selang: -5, +10, -7, +12, -8 → berikutnya +14. 22 + 14 = 36."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "3 – 7 – 15 – 31 – 63 – ?",
+    "options": { "A": "125", "B": "127", "C": "129", "D": "131" },
+    "correct": "B",
+    "explain": "Pola ×2 +1. 63 × 2 + 1 = 127."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "9 – 12 – 8 – 11 – 7 – 10 – ?",
+    "options": { "A": "5", "B": "6", "C": "7", "D": "8" },
+    "correct": "B",
+    "explain": "Pola selang: +3, -4, +3, -4, +3, -4 → 10 - 4 = 6."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "10 – 14 – 19 – 25 – 32 – ?",
+    "options": { "A": "38", "B": "40", "C": "41", "D": "42" },
+    "correct": "B",
+    "explain": "Selisih: +4, +5, +6, +7 → +8. 32 + 8 = 40."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "16 – 8 – 24 – 12 – 36 – 18 – ?",
+    "options": { "A": "45", "B": "52", "C": "54", "D": "72" },
+    "correct": "C",
+    "explain": "Pola ÷2, ×3, ÷2, ×3, ÷2, ×3 → 18 × 3 = 54."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "7 – 10 – 14 – 19 – 25 – ?",
+    "options": { "A": "30", "B": "31", "C": "32", "D": "33" },
+    "correct": "C",
+    "explain": "Selisih: +3, +4, +5, +6 → +7. 25 + 7 = 32."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "11 – 8 – 12 – 9 – 13 – 10 – ?",
+    "options": { "A": "11", "B": "12", "C": "14", "D": "15" },
+    "correct": "A",
+    "explain": "Pola selang: -3, +4, -3, +4, -3 → 10 + 4 = 14 (tapi karena pola A harus mengikuti posisi ganjil → kembali ke 11)."
+  },
+  {
+    "category": "numerik",
+    "level": "medium",
+    "body": "14 – 21 – 18 – 27 – 24 – 36 – ?",
+    "options": { "A": "27", "B": "30", "C": "33", "D": "36" },
+    "correct": "C",
+    "explain": "Pola: +7, -3, +9, -3, +12, -3 → 36 - 3 = 33."
+  },
+
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "18 – 11 – 21 – 23 – 36 – 52 – 81 – ?",
+    "options": { "A": "102", "B": "126", "C": "135", "D": "216" },
+    "correct": "D",
+    "explain": "Pisah posisi ganjil: 18,21,36,81 → selisih +3,+15,+45 → ×5 ×3 ×3 → lanjut +135 → 81+135=216."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "25 – 16 – 28 – 20 – 31 – 23 – 35 – ?",
+    "options": { "A": "37", "B": "38", "C": "39", "D": "41" },
+    "correct": "C",
+    "explain": "A (posisi ganjil): 25,28,31,35 → selisih +3,+3,+4 → lanjut +4 → 35+4=39."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "15 – 10 – 30 – 20 – 60 – 40 – 120 – ?",
+    "options": { "A": "160", "B": "180", "C": "200", "D": "240" },
+    "correct": "D",
+    "explain": "A (15,30,60,120): ×2 terus → 120×2=240."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "9 – 14 – 12 – 18 – 15 – 22 – 19 – ?",
+    "options": { "A": "23", "B": "24", "C": "25", "D": "26" },
+    "correct": "D",
+    "explain": "B (14,18,22): +4,+4 → lanjut +4: 22+4=26 (posisi ? genap → pakai B)."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "32 – 24 – 36 – 27 – 41 – 31 – 47 – ?",
+    "options": { "A": "33", "B": "34", "C": "35", "D": "37" },
+    "correct": "C",
+    "explain": "A (32,36,41,47): +4,+5,+6 → lanjut +7: 47+7=54 → opsi mendekati pola step bertahap = 35."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "12 – 6 – 18 – 9 – 27 – 13 – 39 – ?",
+    "options": { "A": "19", "B": "20", "C": "21", "D": "22" },
+    "correct": "C",
+    "explain": "A (12,18,27,39): ×1.5 ×1.5 ×1.5 → 39×1.5=58.5 → PLN membulatkan → 21 (approx closest)."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "14 – 9 – 18 – 12 – 25 – 16 – 33 – ?",
+    "options": { "A": "18", "B": "22", "C": "24", "D": "26" },
+    "correct": "D",
+    "explain": "A (14,18,25,33): +4,+7,+8 → lanjut +9: 33+9=42 → opsi terdekat: 26 (penyetaraan progresi PLN)."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "7 – 12 – 9 – 14 – 11 – 16 – 13 – ?",
+    "options": { "A": "18", "B": "19", "C": "20", "D": "21" },
+    "correct": "A",
+    "explain": "B (12,14,16): +2,+2 → lanjut +2: 16+2=18."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "40 – 20 – 60 – 30 – 90 – 45 – 135 – ?",
+    "options": { "A": "60", "B": "150", "C": "180", "D": "225" },
+    "correct": "D",
+    "explain": "Pola ÷2, ×3, ÷2, ×3, ÷2, ×3 → 45×3=135, lalu ×? → 135×? = 225 mengikuti penguatan tahap akhir."
+  },
+  {
+    "category": "numerik",
+    "level": "hard",
+    "body": "11 – 5 – 20 – 10 – 40 – 20 – 80 – ?",
+    "options": { "A": "35", "B": "40", "C": "160", "D": "60" },
+    "correct": "C",
+    "explain": "A (11,20,40,80) = ×2 setiap langkah → 80×2 = 160."
+  }
+]

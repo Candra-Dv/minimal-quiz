@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kuis 30 Detik — Minimal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div class="brand">Quiz<span class="dot">•</span>Lite</div>
+      <div class="meta" id="metaBar" hidden>
+        <span id="catLabel"></span>
+        <span class="divider">•</span>
+        <span id="lvlLabel"></span>
+        <span class="divider">|</span>
+        <span id="pos">1</span>/<span id="total">1</span>
+        <span class="divider">|</span>
+        <span class="timer">⏱️ <b id="timer">30</b>s</span>
+        <span class="divider">|</span>
+        Skor: <b id="score">0</b>
+      </div>
+    </header>
+
+    <!-- Start Menu -->
+    <section class="card" id="menuCard">
+      <h2 style="margin-top:0">Mulai Kuis</h2>
+      <p class="muted">Pilih kategori dan tingkat kesulitan. Tiap soal berdurasi 30 detik, jawaban langsung dinilai.</p>
+      <div class="form">
+        <label class="label">Kategori</label>
+        <select id="category" class="input">
+          <option value="numerik">Numerik</option>
+          <option value="sosiologi">Sosiologi</option>
+          <option value="pengetahuan_umum">Pengetahuan Umum</option>
+        </select>
+
+        <label class="label">Level</label>
+        <select id="level" class="input">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <div class="inline">
+          <label class="label">Jumlah Soal (opsional)</label>
+          <input id="limit" type="number" class="input" min="1" placeholder="Kosongkan untuk semua">
+        </div>
+
+        <div class="actions">
+          <button id="startBtn" class="btn">Mulai ▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="card" id="quizCard" hidden>
+      <div class="progress"><div class="bar" id="timebar"></div></div>
+      <h1 class="q" id="qtext">Memuat…</h1>
+      <div id="opts" class="opts"></div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+      <footer class="footer">
+        <button id="backBtn" class="btn ghost">← Menu</button>
+        <div style="flex:1"></div>
+        <button id="nextBtn" class="btn" disabled>Berikutnya ▶</button>
+      </footer>
+    </section>
+
+    <!-- Result -->
+    <section class="card" id="resultCard" hidden>
+      <h2>Rekap Hasil</h2>
+      <div class="summary">
+        <div class="pill" id="summaryScore">Skor 0/0 (0%)</div>
+        <button class="btn" id="retryBtn">Ulangi</button>
+        <button class="btn ghost" id="exportBtn">Export JSON</button>
+        <button class="btn ghost" id="toMenuBtn">Kembali ke Menu</button>
+      </div>
+      <div class="tablewrap">
+        <table class="table" id="recapTable">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Soal</th>
+              <th>Jawaban Kamu</th>
+              <th>Jawaban Benar</th>
+              <th>Hasil</th>
+              <th>Waktu (d)</th>
+            </tr>
+          </thead>
+          <tbody id="recapBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
