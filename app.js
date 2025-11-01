@@ -25,6 +25,9 @@ async function boot() {
   try {
     const res = await fetch("questions.json");
     RAW = await res.json();
+    if (Array.isArray(RAW) && RAW.some((r) => Array.isArray(r))) {
+      RAW = RAW.flat();
+    }
   } catch (e) {
     console.error("Gagal memuat questions.json", e);
     alert(
@@ -73,7 +76,6 @@ function startQuiz() {
   QUIZ = pool;
   idx = 0;
   score = 0;
-  $("#score").textContent = score;
   $("#total").textContent = QUIZ.length;
   $("#catLabel").textContent = labelCategory(chosen.category);
   $("#lvlLabel").textContent = labelLevel(chosen.level);
@@ -220,7 +222,6 @@ function handleAnswer(q, key) {
 
   const isCorrect = key === q.correct;
   if (isCorrect) score++;
-  $("#score").textContent = score;
 
   lockOptions(q.correct, key);
   showFeedback(
@@ -248,6 +249,7 @@ function goNext() {
 
 function showResult() {
   stopTick();
+  $("#metaBar").hidden = true;  // Sembunyikan meta bar terlebih dahulu
   $("#quizCard").hidden = true;
   $("#resultCard").hidden = false;
 

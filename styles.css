@@ -186,7 +186,6 @@ body {
   gap: 10px;
 }
 
-/* ===== Simplified Result ===== */
 .resultCard {
   background: linear-gradient(180deg, #faf8ff 0%, #fff 60%);
 }
@@ -252,19 +251,91 @@ body {
   color: var(--muted);
 }
 
-/* mode mobile: kecilkan font & sisakan timer saja */
+/* === Meta Bar (under header) === */
+.meta-under {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 12px 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--ring);
+  border-radius: 999px;
+  background: #fff;
+}
+.meta-item .meta-ic {
+  opacity: 0.9;
+  font-size: 14px;
+}
+.meta-timer {
+  background: #eef2ff;
+  border-color: #e0e7ff;
+  color: #1e293b;
+}
+
+.dot-sep::before {
+  content: "•";
+  opacity: 0.5;
+}
+.pipe-sep::before {
+  content: "|";
+  opacity: 0.35;
+}
+
+/* Halus saat muncul */
+.fade-in {
+  animation: metaFade 0.18s ease-out;
+}
+@keyframes metaFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsif === */
+@media (max-width: 640px) {
+  .meta-under {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+  .meta-item .meta-ic {
+    font-size: 13px;
+  }
+  .dot-sep,
+  .pipe-sep {
+    display: none;
+  }
+}
+
+/* Mode sangat kecil (≤480px): tampilkan yang paling penting saja */
 @media (max-width: 480px) {
-  .brand {
-    font-size: 16px;
-  }
-  .meta {
-    font-size: 12px;
-    gap: 6px;
-  }
-  .meta span:not(.timer) {
+  .meta-under .meta-item:nth-of-type(1), /* kategori */
+  .meta-under .meta-item:nth-of-type(2)  /* level */ {
     display: none;
-  } /* sembunyikan semua kecuali timer */
-  .divider {
-    display: none;
+  }
+
+  .meta-under {
+    gap: 10px;
+  }
+  .meta-timer {
+    padding: 6px 12px;
+    font-weight: 700;
   }
 }

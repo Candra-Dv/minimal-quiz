@@ -16,17 +16,6 @@
     <main class="container">
       <header class="topbar">
         <div class="brand">Quiz<span class="dot">•</span>Lite</div>
-        <div class="meta" id="metaBar" hidden>
-          <span id="catLabel"></span>
-          <span class="divider">•</span>
-          <span id="lvlLabel"></span>
-          <span class="divider">|</span>
-          <span id="pos">1</span>/<span id="total">1</span>
-          <span class="divider">|</span>
-          <span class="timer">⏱️ <b id="timer">30</b>s</span>
-          <span class="divider">|</span>
-          Skor: <b id="score">0</b>
-        </div>
       </header>
 
       <!-- Start Menu -->
@@ -52,14 +41,13 @@
           </select>
 
           <div class="inline">
-            <label class="label">Jumlah Soal (opsional)</label>
-            <input
-              id="limit"
-              type="number"
-              class="input"
-              min="1"
-              placeholder="Kosongkan untuk semua"
-            />
+            <label class="label">Jumlah Soal</label>
+            <select id="limit" class="input">
+              <option value="">Semua Soal</option>
+              <option value="5">5 Soal</option>
+              <option value="10" selected>10 Soal</option>
+              <option value="20">20 Soal</option>
+            </select>
           </div>
 
           <div class="actions">
@@ -67,6 +55,35 @@
           </div>
         </div>
       </section>
+
+      <!-- Meta bar -->
+      <div class="meta meta-under fade-in" id="metaBar" hidden>
+        <span class="meta-item">
+          <span class="meta-ic" aria-hidden="true">📂</span>
+          <span id="catLabel">Kategori</span>
+        </span>
+
+        <span class="dot-sep"></span>
+
+        <span class="meta-item">
+          <span class="meta-ic" aria-hidden="true">🎯</span>
+          <span id="lvlLabel">Level</span>
+        </span>
+
+        <span class="pipe-sep"></span>
+
+        <span class="meta-item">
+          <span class="meta-ic" aria-hidden="true">#</span>
+          <span><span id="pos">1</span>/<span id="total">1</span></span>
+        </span>
+
+        <span class="pipe-sep"></span>
+
+        <span class="meta-item meta-timer">
+          <span class="meta-ic" aria-hidden="true">⏱️</span>
+          <span><b id="timer">30</b>s</span>
+        </span>
+      </div>
 
       <!-- Quiz -->
       <section class="card" id="quizCard" hidden>
