@@ -93,7 +93,7 @@
       "level": "easy",
       "body": "20 – 18 – 16 – 14 – ?",
       "options": { "A": "11", "B": "13", "C": "15", "D": "12" },
-      "correct": "B",
+      "correct": "D",
       "explain": "-2 setiap langkah: 14 - 2 = 12."
     },
     {

@@ -249,7 +249,7 @@ function goNext() {
 
 function showResult() {
   stopTick();
-  $("#metaBar").hidden = true;  // Sembunyikan meta bar terlebih dahulu
+  $("#metaBar").hidden = true; // Sembunyikan meta bar terlebih dahulu
   $("#quizCard").hidden = true;
   $("#resultCard").hidden = false;
 
