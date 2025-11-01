@@ -1450,6 +1450,126 @@
       },
       "correct": "A",
       "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "easy",
+      "body": "Semua burung memiliki sayap. Kelelawar memiliki sayap. Kesimpulan: Kelelawar adalah burung.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "easy",
+      "body": "Semua guru adalah pegawai. Semua pegawai adalah guru. Kesimpulan: Guru dan pegawai adalah hal yang sama.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Beberapa ikan hidup di air tawar. Semua ikan hidup di air. Kesimpulan: Semua ikan hidup di air tawar.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua mobil memiliki roda. Sepeda memiliki roda. Kesimpulan: Sepeda adalah mobil.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Beberapa hewan berkaki empat adalah kucing. Semua kucing adalah mamalia. Kesimpulan: Semua mamalia berkaki empat.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Semua A adalah B. Sebagian B bukan C. Kesimpulan: Semua A bukan C.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Tidak ada dokter yang tidak berpendidikan. Beberapa orang berpendidikan bukan dokter. Kesimpulan: Semua orang berpendidikan adalah dokter.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Semua atlet bugar. Sebagian orang bugar. Kesimpulan: Sebagian orang adalah atlet.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua komputer membutuhkan listrik. Beberapa alat yang membutuhkan listrik adalah televisi. Kesimpulan: Televisi adalah komputer.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua buah jeruk adalah buah. Semua buah adalah makanan. Kesimpulan: Semua makanan adalah jeruk.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "B",
+      "explain": ""
     }
   ]
 ]
