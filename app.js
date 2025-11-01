@@ -2,6 +2,7 @@
 // Simplified Result screen (points, total, correct, wrong)
 const PER_QUESTION_SECONDS = 30;
 const POINTS_PER_CORRECT = 10;
+const BALANCED_RATIO = { easy: 1, medium: 2, hard: 2 };
 
 let RAW = [];
 let QUIZ = [];
@@ -59,26 +60,142 @@ function startFromMenu() {
 }
 
 function startQuiz() {
-  const filtered = RAW.filter(
-    (q) => q.category === chosen.category && q.level === chosen.level
-  );
-  let pool = normalizeQuestions(filtered);
-  pool = shuffle(pool);
-  if (chosen.limit && chosen.limit > 0) pool = pool.slice(0, chosen.limit);
+  const category = chosen.category;
+  const level = chosen.level;
+  const desiredTotal = chosen.limit || null; // null => pakai semua
 
-  if (pool.length === 0) {
-    alert(
-      "Belum ada soal untuk kombinasi tersebut. Coba pilih level/kategori lain."
-    );
+  // Kumpulan soal per kategori
+  const catAll = RAW.filter((q) => q.category === category);
+
+  // Jika bukan balanced: pakai flow lama (filter by level)
+  if (level !== "balanced") {
+    let pool = normalizeQuestions(catAll.filter((q) => q.level === level));
+    pool = shuffle(pool);
+    if (desiredTotal) pool = pool.slice(0, desiredTotal);
+
+    if (pool.length === 0) {
+      alert(
+        "Belum ada soal untuk kombinasi tersebut. Coba pilih level/kategori lain."
+      );
+      return;
+    }
+    prepareAndStart(pool, levelLabel(level));
     return;
   }
 
+  // ---- Mode Balanced (Easy:1, Medium:2, Hard:2) ----
+  const poolE = normalizeQuestions(catAll.filter((q) => q.level === "easy"));
+  const poolM = normalizeQuestions(catAll.filter((q) => q.level === "medium"));
+  const poolH = normalizeQuestions(catAll.filter((q) => q.level === "hard"));
+
+  let totalAvailable = poolE.length + poolM.length + poolH.length;
+  if (totalAvailable === 0) {
+    alert("Belum ada soal pada kategori ini.");
+    return;
+  }
+
+  const target = desiredTotal
+    ? Math.min(desiredTotal, totalAvailable)
+    : totalAvailable;
+
+  // Hitung alokasi berdasarkan rasio 1:2:2
+  const sumWeight =
+    BALANCED_RATIO.easy + BALANCED_RATIO.medium + BALANCED_RATIO.hard; // 5
+  let needE = Math.floor((target * BALANCED_RATIO.easy) / sumWeight);
+  let needM = Math.floor((target * BALANCED_RATIO.medium) / sumWeight);
+  let needH = Math.floor((target * BALANCED_RATIO.hard) / sumWeight);
+
+  // Distribusikan sisa agar total tepat = target (prioritas Medium > Hard > Easy)
+  let remainder = target - (needE + needM + needH);
+  const priority = ["medium", "hard", "easy"];
+  let ptr = 0;
+  while (remainder > 0) {
+    const p = priority[ptr % priority.length];
+    if (p === "medium") needM++;
+    else if (p === "hard") needH++;
+    else needE++;
+    remainder--;
+    ptr++;
+  }
+
+  // Ambil sesuai alokasi (kalau kurang, akan ditambal)
+  let takeE = sample(poolE, needE);
+  let takeM = sample(poolM, needM);
+  let takeH = sample(poolH, needH);
+
+  // Hitung kekurangan dan tambal dari level lain (urut preferensi: Medium → Hard → Easy)
+  function short(n, got) {
+    return Math.max(0, n - got.length);
+  }
+
+  let shortage = target - (takeE.length + takeM.length + takeH.length);
+  if (shortage > 0) {
+    // sisa kandidat (yang belum terambil)
+    const leftE = poolE.filter((x) => !takeE.includes(x));
+    const leftM = poolM.filter((x) => !takeM.includes(x));
+    const leftH = poolH.filter((x) => !takeH.includes(x));
+
+    const refillOrder = [leftM, leftH, leftE];
+    for (const bucket of refillOrder) {
+      if (shortage <= 0) break;
+      const add = sample(bucket, shortage);
+      // push ke bucket yang paling “kurang” secara proporsi saat ini
+      for (const it of add) {
+        // pilih kemana? prioritaskan menambah M → H → E agar profil tetap mirip
+        if (leftM.includes(it)) takeM.push(it);
+        else if (leftH.includes(it)) takeH.push(it);
+        else takeE.push(it);
+      }
+      shortage = target - (takeE.length + takeM.length + takeH.length);
+    }
+  }
+
+  let pool = shuffle([...takeE, ...takeM, ...takeH]).slice(0, target);
+  prepareAndStart(pool, "Balanced");
+}
+
+// helper label untuk start
+function levelLabel(lv) {
+  const m = { easy: "Easy", medium: "Medium", hard: "Hard" };
+  return m[lv] || lv;
+}
+
+// pemersih start yang sama untuk semua mode
+function prepareAndStart(pool, label) {
   QUIZ = pool;
   idx = 0;
   score = 0;
+  $("#score").textContent = score;
   $("#total").textContent = QUIZ.length;
   $("#catLabel").textContent = labelCategory(chosen.category);
-  $("#lvlLabel").textContent = labelLevel(chosen.level);
+  $("#lvlLabel").textContent = label;
+  $("#metaBar").hidden = false;
+
+  $("#menuCard").hidden = true;
+  $("#resultCard").hidden = true;
+  $("#quizCard").hidden = false;
+
+  const t2 = document.getElementById("timerInline");
+  if (t2) t2.textContent = PER_QUESTION_SECONDS;
+
+  renderQuestion();
+}
+
+// helper label untuk start
+function levelLabel(lv) {
+  const m = { easy: "Easy", medium: "Medium", hard: "Hard" };
+  return m[lv] || lv;
+}
+
+// pemersih start yang sama untuk semua mode
+function prepareAndStart(pool, label) {
+  QUIZ = pool;
+  idx = 0;
+  score = 0;
+  $("#score").textContent = score;
+  $("#total").textContent = QUIZ.length;
+  $("#catLabel").textContent = labelCategory(chosen.category);
+  $("#lvlLabel").textContent = label;
   $("#metaBar").hidden = false;
 
   $("#menuCard").hidden = true;
@@ -112,6 +229,30 @@ function shuffle(arr) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+function sample(arr, n) {
+  return shuffle(arr).slice(0, Math.max(0, Math.min(n, arr.length)));
+}
+
+// pemersih start yang sama untuk semua mode
+function prepareAndStart(pool, label) {
+  QUIZ = pool;
+  idx = 0;
+  score = 0;
+  $("#total").textContent = QUIZ.length;
+  $("#catLabel").textContent = labelCategory(chosen.category);
+  $("#lvlLabel").textContent = label;
+  $("#metaBar").hidden = false;
+
+  $("#menuCard").hidden = true;
+  $("#resultCard").hidden = true;
+  $("#quizCard").hidden = false;
+
+  const t2 = document.getElementById("timerInline");
+  if (t2) t2.textContent = PER_QUESTION_SECONDS;
+
+  renderQuestion();
 }
 
 function normalizeQuestions(raw) {
