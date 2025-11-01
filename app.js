@@ -1,15 +1,16 @@
-// Quiz with Start Menu, Categories, Levels, Shuffle, and Recap
+// Quiz with Start Menu, Categories, Levels, Shuffle, mobile inline timer (Option B)
+// Simplified Result screen (points, total, correct, wrong)
 const PER_QUESTION_SECONDS = 30;
-const LEVELS = ["easy", "medium", "hard"];
+const POINTS_PER_CORRECT = 10;
 
 let RAW = [];
 let QUIZ = [];
-let score = 0;
+let idx = 0;
+let score = 0; // number of correct answers
 let answered = false;
 let tStart = 0;
 let deadline = 0;
 let tickHandle = null;
-let recap = [];
 let chosen = { category: "numerik", level: "easy", limit: null };
 
 const $ = (s) => document.querySelector(s);
@@ -18,7 +19,6 @@ const $ = (s) => document.querySelector(s);
 $("#startBtn").addEventListener("click", startFromMenu);
 $("#backBtn").addEventListener("click", backToMenu);
 $("#retryBtn").addEventListener("click", () => startQuiz());
-$("#exportBtn").addEventListener("click", exportJSON);
 $("#toMenuBtn").addEventListener("click", backToMenu);
 
 async function boot() {
@@ -32,7 +32,6 @@ async function boot() {
     );
     return;
   }
-  // Default: stay on menu
   showMenu();
 }
 
@@ -57,7 +56,6 @@ function startFromMenu() {
 }
 
 function startQuiz() {
-  // filter by category and level
   const filtered = RAW.filter(
     (q) => q.category === chosen.category && q.level === chosen.level
   );
@@ -75,7 +73,6 @@ function startQuiz() {
   QUIZ = pool;
   idx = 0;
   score = 0;
-  recap = [];
   $("#score").textContent = score;
   $("#total").textContent = QUIZ.length;
   $("#catLabel").textContent = labelCategory(chosen.category);
@@ -85,6 +82,9 @@ function startQuiz() {
   $("#menuCard").hidden = true;
   $("#resultCard").hidden = true;
   $("#quizCard").hidden = false;
+
+  const t2 = document.getElementById("timerInline");
+  if (t2) t2.textContent = PER_QUESTION_SECONDS;
 
   renderQuestion();
 }
@@ -113,7 +113,6 @@ function shuffle(arr) {
 }
 
 function normalizeQuestions(raw) {
-  // Ensure uniform structure and shuffle options while keeping correct mapping by text
   return raw.map((q, qi) => {
     const entries = Object.entries(q.options).map(([key, text]) => ({
       key,
@@ -121,7 +120,6 @@ function normalizeQuestions(raw) {
     }));
     const shuffled = shuffle(entries);
     const correctText = q.options[q.correct];
-    // Find the new key where the correct text appears
     const newKey =
       shuffled.find((o) => o.text === correctText)?.key || q.correct;
     const options = {};
@@ -156,6 +154,10 @@ function renderQuestion() {
   answered = false;
   tStart = Date.now();
   deadline = tStart + PER_QUESTION_SECONDS * 1000;
+
+  const t2 = document.getElementById("timerInline");
+  if (t2) t2.textContent = PER_QUESTION_SECONDS;
+
   startTick();
 }
 
@@ -174,6 +176,9 @@ function tick() {
   const now = Date.now();
   const left = Math.max(0, Math.floor((deadline - now) / 1000));
   $("#timer").textContent = left;
+  const t2 = document.getElementById("timerInline");
+  if (t2) t2.textContent = left;
+
   const total = PER_QUESTION_SECONDS * 1000;
   const used = Math.min(total, now - tStart);
   const pct = Math.max(0, Math.min(100, ((total - used) / total) * 100));
@@ -183,12 +188,10 @@ function tick() {
     answered = true;
     stopTick();
     const q = QUIZ[idx];
-    const timeSec = PER_QUESTION_SECONDS;
-    pushRecap(q, null, timeSec);
     showFeedback(false, "(Waktu habis) " + correctSentence(q));
     lockOptions(q.correct, null);
     $("#nextBtn").disabled = false;
-    setTimeout(goNext, 1200);
+    setTimeout(goNext, 1500);
   }
 }
 
@@ -215,7 +218,6 @@ function handleAnswer(q, key) {
   answered = true;
   stopTick();
 
-  const timeSec = Math.max(0, Math.round((Date.now() - tStart) / 1000));
   const isCorrect = key === q.correct;
   if (isCorrect) score++;
   $("#score").textContent = score;
@@ -225,25 +227,9 @@ function handleAnswer(q, key) {
     isCorrect,
     (isCorrect ? "Benar! " : "Salah. ") + correctSentence(q)
   );
-  pushRecap(q, key, timeSec);
 
   $("#nextBtn").disabled = false;
-  setTimeout(goNext, 2000);
-}
-
-function pushRecap(q, selectedKey, timeSec) {
-  const correctKey = q.correct;
-  recap.push({
-    n: idx + 1,
-    body: stripTags(q.body),
-    selected: selectedKey
-      ? `${selectedKey}. ${q.options[selectedKey]}`
-      : "(tidak menjawab)",
-    correctKey,
-    correctText: q.options[correctKey],
-    isCorrect: !!(selectedKey && selectedKey === correctKey),
-    timeSec,
-  });
+  setTimeout(goNext, 1200);
 }
 
 function showFeedback(ok, text) {
@@ -265,27 +251,15 @@ function showResult() {
   $("#quizCard").hidden = true;
   $("#resultCard").hidden = false;
 
-  const percent = Math.round((score / QUIZ.length) * 100);
-  $("#summaryScore").textContent = `Skor ${score}/${QUIZ.length} (${percent}%)`;
+  const total = QUIZ.length;
+  const correct = score;
+  const wrong = total - correct;
+  const points = correct * POINTS_PER_CORRECT;
 
-  const tbody = $("#recapBody");
-  tbody.innerHTML = "";
-  recap.forEach((row) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${row.n}</td>
-      <td>${escapeHtml(row.body)}</td>
-      <td>${escapeHtml(row.selected)}</td>
-      <td>${row.correctKey}. ${escapeHtml(row.correctText)}</td>
-      <td>${
-        row.isCorrect
-          ? '<span class="badge ok">Benar</span>'
-          : '<span class="badge bad">Salah</span>'
-      }</td>
-      <td>${row.timeSec}</td>
-    `;
-    tbody.appendChild(tr);
-  });
+  $("#resultPoints").textContent = `You've scored +${points} points`;
+  $("#statTotal").textContent = total;
+  $("#statCorrect").textContent = correct.toString().padStart(2, "0");
+  $("#statWrong").textContent = wrong.toString().padStart(2, "0");
 }
 
 function stripTags(s) {

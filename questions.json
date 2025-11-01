@@ -4,8 +4,8 @@
     "level": "easy",
     "body": "3 – 5 – 7 – 9 – ?",
     "options": { "A": "10", "B": "11", "C": "12", "D": "13" },
-    "correct": "A",
-    "explain": "Pola +2 setiap langkah: 9 + 2 = 11 → tetapi pilihan terdekat adalah 10 sebagai pola aritmatika awal. Matematis benar = 11, jika mengikuti pembiasaan awal = 10."
+    "correct": "B",
+    "explain": "Pola +2 setiap langkah: 9 + 2 = 11"
   },
   {
     "category": "numerik",
@@ -148,9 +148,9 @@
     "category": "numerik",
     "level": "medium",
     "body": "11 – 8 – 12 – 9 – 13 – 10 – ?",
-    "options": { "A": "11", "B": "12", "C": "14", "D": "15" },
-    "correct": "A",
-    "explain": "Pola selang: -3, +4, -3, +4, -3 → 10 + 4 = 14 (tapi karena pola A harus mengikuti posisi ganjil → kembali ke 11)."
+    "options": { "A": "11", "B": "12", "C": "13", "D": "14" },
+    "correct": "D",
+    "explain": "Pisah posisi: A = 11,12,13 → +1,+1,+1 → 13+1=14."
   },
   {
     "category": "numerik",
@@ -197,17 +197,17 @@
     "category": "numerik",
     "level": "hard",
     "body": "32 – 24 – 36 – 27 – 41 – 31 – 47 – ?",
-    "options": { "A": "33", "B": "34", "C": "35", "D": "37" },
+    "options": { "A": "50", "B": "52", "C": "54", "D": "56" },
     "correct": "C",
-    "explain": "A (32,36,41,47): +4,+5,+6 → lanjut +7: 47+7=54 → opsi mendekati pola step bertahap = 35."
+    "explain": "A (32,36,41,47) selisih +4,+5,+6 → +7. 47+7=54."
   },
   {
     "category": "numerik",
     "level": "hard",
     "body": "12 – 6 – 18 – 9 – 27 – 13 – 39 – ?",
-    "options": { "A": "19", "B": "20", "C": "21", "D": "22" },
+    "options": { "A": "56", "B": "58", "C": "59", "D": "60" },
     "correct": "C",
-    "explain": "A (12,18,27,39): ×1.5 ×1.5 ×1.5 → 39×1.5=58.5 → PLN membulatkan → 21 (approx closest)."
+    "explain": "A (12,18,27,39) adalah ×1.5 tiap langkah. 39×1.5 = 58.5 → dibulatkan ke terdekat = 59."
   },
   {
     "category": "numerik",
