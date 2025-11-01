@@ -686,5 +686,770 @@
       "correct": "B",
       "explain": "Pasangan (n², n): 4→2² & 2, 9→3² & 3, 16→4² & 4, 25→5² & 5 → jawab 5."
     }
+  ],
+
+  [
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Proses menurunkan tegangan listrik dari jaringan transmisi ke jaringan distribusi disebut...",
+      "options": {
+        "A": "Step-down",
+        "B": "Step-up",
+        "C": "Rectifying",
+        "D": "Grounding"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "PLTS adalah singkatan dari...",
+      "options": {
+        "A": "Pembangkit Listrik Tenaga Surya",
+        "B": "Pembangkit Listrik Tenaga Sungai",
+        "C": "Pembangkit Listrik Tenaga Sel",
+        "D": "Pembangkit Listrik Tenaga Sabit"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Energi yang memanfaatkan aliran udara untuk memutar turbin disebut...",
+      "options": {
+        "A": "PLTMH",
+        "B": "PLTB",
+        "C": "PLTA",
+        "D": "PLTS"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "PLN merupakan anak perusahaan yang bergerak di bidang...",
+      "options": {
+        "A": "Konsultasi dan perencanaan proyek kelistrikan",
+        "B": "Distribusi energi listrik",
+        "C": "Produksi listrik tenaga batu bara",
+        "D": "Jasa telekomunikasi"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Sumber energi panas bumi untuk PLTP berasal dari...",
+      "options": {
+        "A": "Tekanan udara",
+        "B": "Panas dalam bumi",
+        "C": "Panas matahari",
+        "D": "Gelombang laut"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Meter kWh pada pelanggan listrik digunakan untuk mengukur...",
+      "options": {
+        "A": "Luas bangunan",
+        "B": "Jumlah energi listrik yang terpakai",
+        "C": "Jenis kabel listrik",
+        "D": "Daya maksimum peralatan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "PLN Nusantara Power (eks PJB) menjadi anak perusahaan yang fokus pada...",
+      "options": {
+        "A": "Distribusi listrik",
+        "B": "Pembangkit listrik",
+        "C": "Internet dan telekomunikasi",
+        "D": "Pengadaan material"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Pelanggan listrik prabayar dikenal dengan sistem...",
+      "options": {
+        "A": "Token",
+        "B": "Tagihan Bulanan",
+        "C": "Catat Meter",
+        "D": "Abodemen"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Layanan tambah daya dapat dilakukan melalui aplikasi...",
+      "options": {
+        "A": "PLN Portal",
+        "B": "PLN Mobile",
+        "C": "PLN Control",
+        "D": "PLN Dashboard"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "PLN Gas & Geothermal terkait dengan penyediaan energi berbasis...",
+      "options": {
+        "A": "Panas bumi dan gas",
+        "B": "Nuklir",
+        "C": "Tenaga surya",
+        "D": "Gelombang laut"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "PLTMH adalah pembangkit listrik yang memanfaatkan...",
+      "options": {
+        "A": "Air dalam skala kecil",
+        "B": "Angin laut",
+        "C": "Sungai besar",
+        "D": "Sumber panas bumi"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Sistem jaringan 20 kV pada distribusi listrik dikenal dengan sebutan...",
+      "options": {
+        "A": "Tegangan Rendah",
+        "B": "Tegangan Menengah",
+        "C": "Tegangan Tinggi",
+        "D": "Tegangan Ekstra Tinggi"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "PLTA adalah singkatan dari...",
+      "options": {
+        "A": "Pembangkit Listrik Tenaga Air",
+        "B": "Pembangkit Listrik Tenaga Angin",
+        "C": "Pembangkit Listrik Tenaga Asap",
+        "D": "Pembangkit Listrik Tenaga Alternatif"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Token listrik dibeli dalam bentuk...",
+      "options": {
+        "A": "Pulsa kWh",
+        "B": "Voucher internet",
+        "C": "Kode meteransi",
+        "D": "Langganan bulanan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Pemasangan kWh meter baru disebut layanan...",
+      "options": {
+        "A": "Ganti Daya",
+        "B": "Pasang Baru",
+        "C": "Pemutusan",
+        "D": "Penyegelan"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Energi yang dihasilkan dari sisa tumbuhan dan hewan disebut...",
+      "options": {
+        "A": "Biomassa",
+        "B": "Nuklir",
+        "C": "Fosil",
+        "D": "Kinetik"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Layanan pengaduan gangguan listrik dapat dilakukan melalui...",
+      "options": {
+        "A": "PLN Mobile",
+        "B": "Email",
+        "C": "SMS",
+        "D": "Call Center Polri"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Arus listrik diukur dalam satuan...",
+      "options": {
+        "A": "Volt",
+        "B": "Ampere",
+        "C": "Ohm",
+        "D": "Watt"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Tegangan listrik diukur dalam satuan...",
+      "options": {
+        "A": "Volt",
+        "B": "Watt",
+        "C": "Ampere",
+        "D": "Coulomb"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Daya listrik diukur dalam satuan...",
+      "options": {
+        "A": "Watt",
+        "B": "Volt",
+        "C": "Ampere",
+        "D": "Ohm"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "PLN menerapkan sistem _Net Metering_ pada pemakaian...",
+      "options": {
+        "A": "PLTS Atap",
+        "B": "PLTB Darat",
+        "C": "PLTB Laut",
+        "D": "PLTMH"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Sistem _smart grid_ bertujuan untuk...",
+      "options": {
+        "A": "Meningkatkan efisiensi dan keandalan jaringan listrik",
+        "B": "Meningkatkan harga listrik",
+        "C": "Menambah daya listrik pelanggan secara otomatis",
+        "D": "Mengurangi penggunaan energi terbarukan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Energi air dimanfaatkan dalam pembangkit...",
+      "options": {
+        "A": "PLTS",
+        "B": "PLTA",
+        "C": "PLTP",
+        "D": "PLTB"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Perusahaan yang mengelola transmisi listrik di bawah PLN adalah...",
+      "options": {
+        "A": "PLN Icon Plus",
+        "B": "PLN Enjiniring",
+        "C": "PT PLN Indonesia Power",
+        "D": "PT PLN Nusantara Power"
+      },
+      "correct": "D",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Perubahan daya listrik pelanggan misalnya dari 900 VA menjadi 1300 VA disebut...",
+      "options": {
+        "A": "Pasang Baru",
+        "B": "Tambah Daya",
+        "C": "Penyesuaian Phase",
+        "D": "Pemutusan Sementara"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Jaringan transmisi listrik digunakan untuk...",
+      "options": {
+        "A": "Menyalurkan listrik jarak jauh",
+        "B": "Menghubungkan listrik rumah tangga",
+        "C": "Memasang meter kWh",
+        "D": "Memperbaiki kerusakan internal"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Listrik prabayar membutuhkan input berupa...",
+      "options": {
+        "A": "Token",
+        "B": "Tagihan",
+        "C": "Nota bayar",
+        "D": "Struk pembayaran"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Sumber energi surya diperoleh dari...",
+      "options": {
+        "A": "Cahaya matahari",
+        "B": "Panas bumi",
+        "C": "Gerakan udara",
+        "D": "Endapan fosil"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "easy",
+      "body": "Fitur Cek Tagihan pada PLN Mobile digunakan untuk pelanggan tipe...",
+      "options": {
+        "A": "Pascabayar",
+        "B": "Prabayar",
+        "C": "Solar",
+        "D": "Premium"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "medium",
+      "body": "Sumber energi angin bersifat...",
+      "options": {
+        "A": "Terbarukan",
+        "B": "Tak terbarukan",
+        "C": "Fosil",
+        "D": "Radioaktif"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "Apa tujuan utama dari program Net Zero Emission PLN tahun 2060?",
+      "options": {
+        "A": "Mengurangi subsidi listrik",
+        "B": "Mencapai sistem ketenagalistrikan tanpa emisi karbon",
+        "C": "Memperluas jaringan transmisi 500 kV",
+        "D": "Menghapus pembangkit PLTU"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "RUPTL 2021–2030 disebut sebagai RUPTL hijau karena...",
+      "options": {
+        "A": "PLTU dihapus 100%",
+        "B": "Porsi EBT ditingkatkan lebih besar dibanding energi fosil",
+        "C": "Seluruh pembangkit menggunakan batubara ramah lingkungan",
+        "D": "Semua jaringan telah smart grid"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "PLN mengimplementasikan skema Cofiring untuk mengurangi emisi pada PLTU. Cofiring berarti...",
+      "options": {
+        "A": "Mengganti batubara dengan gas sepenuhnya",
+        "B": "Mencampur batubara dengan biomassa",
+        "C": "Menghubungkan dua PLTU menjadi satu jaringan",
+        "D": "Meningkatkan tekanan uap turbin"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "Tujuan penggunaan Interkoneksi Sistem Ketenagalistrikan adalah...",
+      "options": {
+        "A": "Meningkatkan beban puncak",
+        "B": "Mempermudah pemadaman terencana",
+        "C": "Menjamin keandalan dan efisiensi pasokan antar wilayah",
+        "D": "Mengurangi kapasitas cadangan pembangkit"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "Teknologi Smart Meter diterapkan untuk...",
+      "options": {
+        "A": "Memutus listrik pelanggan secara manual",
+        "B": "Mencatat pemakaian listrik secara otomatis & real-time",
+        "C": "Mengurangi daya listrik pelanggan secara otomatis",
+        "D": "Menghilangkan biaya abonemen"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "Pembangkit base load umumnya memiliki karakteristik...",
+      "options": {
+        "A": "Dapat naik turun sangat cepat",
+        "B": "Bekerja stabil dalam jangka panjang",
+        "C": "Menggunakan energi terbarukan saja",
+        "D": "Tidak memerlukan jaringan transmisi"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "PLN menggunakan skema IPP (Independent Power Producer) untuk...",
+      "options": {
+        "A": "Mengizinkan swasta membangun dan menjual listrik ke pengetahuan_umum",
+        "B": "Menghapus subsidi listrik rumah tangga",
+        "C": "Mengurangi jaringan 150 kV",
+        "D": "Melakukan impor energi dari luar negeri"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "Faktor kapasitas (capacity factor) pembangkit menunjukkan...",
+      "options": {
+        "A": "Efisiensi turbin uap",
+        "B": "Persentase output aktual dibandingkan kapasitas maksimal",
+        "C": "Jumlah energi yang hilang pada transmisi",
+        "D": "Beban puncak minimum"
+      },
+      "correct": "B",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "Pembangkit listrik dengan respons tercepat terhadap perubahan beban adalah...",
+      "options": {
+        "A": "PLTU Batubara",
+        "B": "PLTGU",
+        "C": "PLTA",
+        "D": "PLTP"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "pengetahuan_umum",
+      "level": "hard",
+      "body": "EBT yang paling stabil untuk digunakan sebagai base load adalah...",
+      "options": {
+        "A": "PLTS",
+        "B": "PLTB",
+        "C": "PLTP",
+        "D": "PLTMH"
+      },
+      "correct": "C",
+      "explain": ""
+    }
+  ],
+  [
+    {
+      "category": "silogisme",
+      "level": "easy",
+      "body": "Semua kucing adalah hewan. Tom adalah kucing. Kesimpulan: Tom adalah hewan.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "easy",
+      "body": "Semua siswa memakai seragam. Budi adalah siswa. Kesimpulan: Budi memakai seragam.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua guru adalah pegawai. Beberapa pegawai adalah wanita. Kesimpulan: Beberapa guru adalah wanita.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua bunga memiliki kelopak. Beberapa tanaman tidak memiliki kelopak. Kesimpulan: Beberapa tanaman bukan bunga.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua dokter belajar anatomi. Sinta belajar anatomi. Kesimpulan: Sinta adalah dokter.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Beberapa mobil berwarna merah. Semua mobil memiliki roda. Kesimpulan: Beberapa kendaraan beroda berwarna merah.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Semua A adalah B. Tidak ada B yang C. Kesimpulan: Tidak ada A yang C.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Semua ilmuwan membaca buku. Sebagian pembaca buku tidak suka eksperimen. Kesimpulan: Beberapa ilmuwan tidak suka eksperimen.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Tidak satu pun kuda bisa terbang. Beberapa makhluk hidup bisa terbang. Kesimpulan: Beberapa makhluk hidup bukan kuda.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "easy",
+      "body": "Semua jeruk adalah buah. Semua buah mengandung vitamin. Kesimpulan: Semua jeruk mengandung vitamin.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua pemain sepak bola berlatih. Sebagian atlet berlatih. Kesimpulan: Sebagian atlet adalah pemain sepak bola.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Beberapa siswa pintar. Semua siswa belajar. Kesimpulan: Beberapa yang belajar adalah pintar.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Semua burung memiliki sayap. Beberapa hewan bersayap tidak bisa terbang. Kesimpulan: Beberapa burung tidak bisa terbang.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "easy",
+      "body": "Semua manusia bernapas. Dani adalah manusia. Kesimpulan: Dani bernapas.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Tidak ada siswa yang tidak belajar. Beberapa orang di kelas tidak belajar. Kesimpulan: Beberapa orang di kelas bukan siswa.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua komputer membutuhkan listrik. Beberapa alat elektronik membutuhkan listrik. Kesimpulan: Beberapa alat elektronik adalah komputer.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "easy",
+      "body": "Semua ikan hidup di air. Lele adalah ikan. Kesimpulan: Lele hidup di air.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Beberapa mahasiswa adalah peneliti. Tidak ada peneliti yang malas. Kesimpulan: Beberapa mahasiswa tidak malas.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "medium",
+      "body": "Semua programmer menulis kode. Andi menulis kode. Kesimpulan: Andi adalah programmer.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "C",
+      "explain": ""
+    },
+    {
+      "category": "silogisme",
+      "level": "hard",
+      "body": "Semua A adalah B. Sebagian B adalah C. Tidak satu pun C adalah D. Kesimpulan: Sebagian A bukan D.",
+      "options": {
+        "A": "Benar",
+        "B": "Salah",
+        "C": "Tidak ada kesimpulan"
+      },
+      "correct": "A",
+      "explain": ""
+    }
   ]
 ]

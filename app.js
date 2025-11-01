@@ -3,6 +3,7 @@
 const PER_QUESTION_SECONDS = 30;
 const POINTS_PER_CORRECT = 10;
 const BALANCED_RATIO = { easy: 1, medium: 2, hard: 2 };
+const FORCE_BALANCED = new Set(["silogisme", "pengetahuan_umum"]);
 
 let RAW = [];
 let QUIZ = [];
@@ -21,6 +22,8 @@ $("#startBtn").addEventListener("click", startFromMenu);
 $("#backBtn").addEventListener("click", backToMenu);
 $("#retryBtn").addEventListener("click", () => startQuiz());
 $("#toMenuBtn").addEventListener("click", backToMenu);
+// lock level silo dan PU
+$("#category").addEventListener("change", updateLevelLock);
 
 async function boot() {
   try {
@@ -57,6 +60,22 @@ function startFromMenu() {
   const limit = parseInt($("#limit").value || "0", 10);
   chosen = { category, level, limit: limit > 0 ? limit : null };
   startQuiz();
+}
+
+// mengunci pilihan level tertentu
+function updateLevelLock() {
+  const cat = $("#category").value;
+  const levelEl = $("#level");
+  const hintEl = document.getElementById("levelHint");
+
+  if (FORCE_BALANCED.has(cat)) {
+    levelEl.value = "balanced"; // set otomatis
+    levelEl.disabled = true; // kunci
+    if (hintEl) hintEl.style.display = "inline";
+  } else {
+    levelEl.disabled = false; // buka kunci untuk kategori lain (mis. numerik)
+    if (hintEl) hintEl.style.display = "none";
+  }
 }
 
 function startQuiz() {
@@ -212,7 +231,7 @@ function labelCategory(c) {
   return (
     {
       numerik: "Numerik",
-      sosiologi: "Sosiologi",
+      silogisme: "Silogisme",
       pengetahuan_umum: "Pengetahuan Umum",
     }[c] || c
   );
@@ -441,5 +460,5 @@ function exportJSON() {
   URL.revokeObjectURL(url);
 }
 
-// Start
+updateLevelLock();
 boot();
