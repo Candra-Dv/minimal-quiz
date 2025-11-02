@@ -167,7 +167,7 @@
       "category": "numerik",
       "level": "medium",
       "body": "5 – 8 – 12 – 17 – 23 – ?",
-      "options": { "A": "28", "B": "29", "C": "30", "D": "31" },
+      "options": { "A": "25", "B": "29", "C": "30", "D": "31" },
       "correct": "C",
       "explain": "Selisih: +3, +4, +5, +6 → +7. 23 + 7 = 30."
     },
@@ -183,7 +183,7 @@
       "category": "numerik",
       "level": "medium",
       "body": "20 – 15 – 25 – 18 – 30 – 22 – ?",
-      "options": { "A": "33", "B": "36", "C": "38", "D": "40" },
+      "options": { "A": "33", "B": "36", "C": "24", "D": "28" },
       "correct": "B",
       "explain": "Pola selang: -5, +10, -7, +12, -8 → berikutnya +14. 22 + 14 = 36."
     },
@@ -191,7 +191,7 @@
       "category": "numerik",
       "level": "medium",
       "body": "3 – 7 – 15 – 31 – 63 – ?",
-      "options": { "A": "125", "B": "127", "C": "129", "D": "131" },
+      "options": { "A": "125", "B": "127", "C": "129", "D": "94" },
       "correct": "B",
       "explain": "Pola ×2 +1. 63 × 2 + 1 = 127."
     },
@@ -247,17 +247,17 @@
       "category": "numerik",
       "level": "medium",
       "body": "1 – 1 – 2 – 3 – 5 – 8 – ?",
-      "options": { "A": "11", "B": "12", "C": "13", "D": "14" },
+      "options": { "A": "9", "B": "11", "C": "13", "D": "14" },
       "correct": "C",
       "explain": "8 + 5 = 13."
     },
     {
-  "category": "numerik",
-  "level": "medium",
-  "body": "2 – 8 – 4 – 16 – 8 – ?",
-  "options": { "A": "24", "B": "32", "C": "40", "D": "36" },
-  "correct": "B",
-  "explain": "Pola bergantian: ×4, ÷2. 8 ×4 = 32."
+      "category": "numerik",
+      "level": "medium",
+      "body": "2 – 8 – 4 – 16 – 8 – ?",
+      "options": { "A": "24", "B": "32", "C": "40", "D": "36" },
+      "correct": "B",
+      "explain": "Pola bergantian: ×4, ÷2. 8 ×4 = 32."
     },
     {
       "category": "numerik",
@@ -268,13 +268,13 @@
       "explain": "13 + 8 = 21."
     },
     {
-  "category": "numerik",
-  "level": "medium",
-  "body": "4 – 12 – 11 – 33 – 32 – ?",
-  "options": { "A": "92", "B": "96", "C": "34", "D": "31" },
-  "correct": "B",
-  "explain": "Pola selang-seling: ×3 kemudian -1. 4×3=12, 12-1=11, 11×3=33, 33-1=32, maka 32×3 = 96."
-},
+      "category": "numerik",
+      "level": "medium",
+      "body": "4 – 12 – 11 – 33 – 32 – ?",
+      "options": { "A": "92", "B": "96", "C": "34", "D": "31" },
+      "correct": "B",
+      "explain": "Pola selang-seling: ×3 kemudian -1. 4×3=12, 12-1=11, 11×3=33, 33-1=32, maka 32×3 = 96."
+    },
     {
       "category": "numerik",
       "level": "medium",
@@ -372,12 +372,12 @@
       "explain": "Selisih bertahap: +3, +4, +5, +6 → berikutnya +7. 23 + 7 = 30."
     },
     {
-  "category": "numerik",
-  "level": "medium",
-  "body": "60 – 120 – 40 – 80 – 20 – 40 – ?",
-  "options": { "A": "8", "B": "10", "C": "12", "D": "16" },
-  "correct": "A",
-  "explain": "Pola selang-seling: ×2, ÷3, ×2, ÷4, ×2, ÷5. Jadi 40 ÷ 5 = 8."
+      "category": "numerik",
+      "level": "medium",
+      "body": "60 – 120 – 40 – 80 – 20 – 40 – ?",
+      "options": { "A": "8", "B": "10", "C": "12", "D": "16" },
+      "correct": "A",
+      "explain": "Pola selang-seling: ×2, ÷3, ×2, ÷4, ×2, ÷5. Jadi 40 ÷ 5 = 8."
     },
     {
       "category": "numerik",
@@ -455,12 +455,12 @@
       "explain": "Pisah posisi ganjil: 18,21,36,81 → selisih +3,+15,+45 → ×5 ×3 ×3 → lanjut +135 → 81+135=216."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "5 – 8 – 6 – 14 – 12 – 26 – 20 – ?",
-  "options": { "A": "44", "B": "46", "C": "50", "D": "54" },
-  "correct": "C",
-  "explain": "Posisi genap membentuk pola: 8 → 14 (+6), 14 → 26 (+12), selisih berganda 6 → 12 → 24. Maka 26 + 24 = 50."
+      "category": "numerik",
+      "level": "hard",
+      "body": "5 – 8 – 6 – 14 – 12 – 26 – 20 – ?",
+      "options": { "A": "34", "B": "46", "C": "50", "D": "54" },
+      "correct": "C",
+      "explain": "Posisi genap membentuk pola: 8 → 14 (+6), 14 → 26 (+12), selisih berganda 6 → 12 → 24. Maka 26 + 24 = 50."
     },
     {
       "category": "numerik",
@@ -495,89 +495,89 @@
       "explain": "A (32,36,41,47) selisih +4,+5,+6 → +7. 47+7=54."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "12 – 6 – 18 – 10 – 27 – 12 – 39 – ?",
-  "options": { "A": "14", "B": "51", "C": "54", "D": "18" },
-  "correct": "C",
-  "explain": "Posisi ganjil membentuk pola stabil: 12 → 18 (+6), 18 → 27 (+9), 27 → 39 (+12). Selisih bertambah +3 setiap langkah, sehingga selisih berikutnya adalah +15."
-},
-    {
-  "category": "numerik",
-  "level": "hard",
-  "body": "8 – 10 – 16 – 7 – 8 – 11 – 24 – ?",
-  "options": { "A": "6", "B": "7", "C": "8", "D": "9" },
-  "correct": "C",
-  "explain": "Posisi ganjil membentuk selang-seling ×2, ÷2, ×3, ÷3. Posisi genap bersifat acak dan tidak membentuk pola."
+      "category": "numerik",
+      "level": "hard",
+      "body": "12 – 6 – 18 – 10 – 27 – 12 – 39 – ?",
+      "options": { "A": "14", "B": "51", "C": "54", "D": "18" },
+      "correct": "C",
+      "explain": "Posisi ganjil membentuk pola stabil: 12 → 18 (+6), 18 → 27 (+9), 27 → 39 (+12). Selisih bertambah +3 setiap langkah, sehingga selisih berikutnya adalah +15."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "9 – 5 – 18 – 8 – 9 – 6 – 27 – ?",
-  "options": { "A": "7", "B": "8", "C": "9", "D": "12" },
-  "correct": "C",
-  "explain": "Posisi ganjil: 9 ×2 = 18, 18 ÷2 = 9, 9 ×3 = 27, 27 ÷3 = 9. Posisi genap hanya pengisi."
+      "category": "numerik",
+      "level": "hard",
+      "body": "8 – 10 – 16 – 7 – 8 – 11 – 24 – ?",
+      "options": { "A": "14", "B": "7", "C": "8", "D": "48" },
+      "correct": "C",
+      "explain": "Posisi ganjil membentuk selang-seling ×2, ÷2, ×3, ÷3. Posisi genap bersifat acak dan tidak membentuk pola."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "4 – 7 – 12 – 10 – 6 – 9 – 24 – ?",
-  "options": { "A": "6", "B": "8", "C": "9", "D": "12" },
-  "correct": "B",
-  "explain": "Posisi ganjil: 4×3=12, 12÷2=6, 6×4=24, 24÷3=8. Posisi genap adalah pengisi acak."
+      "category": "numerik",
+      "level": "hard",
+      "body": "9 – 5 – 18 – 8 – 9 – 6 – 27 – ?",
+      "options": { "A": "7", "B": "8", "C": "9", "D": "12" },
+      "correct": "C",
+      "explain": "Posisi ganjil: 9 ×2 = 18, 18 ÷2 = 9, 9 ×3 = 27, 27 ÷3 = 9. Posisi genap hanya pengisi."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "8 – 6 – 24 – 10 – 12 – 7 – 48 – ?",
-  "options": { "A": "64", "B": "72", "C": "80", "D": "96" },
-  "correct": "C",
-  "explain": "Posisi ganjil adalah pola utama: 8×3=24, 24÷2=12, 12×4=48, 48÷3=16, lalu 16×5=80. Posisi genap bersifat acak."
+      "category": "numerik",
+      "level": "hard",
+      "body": "4 – 7 – 12 – 10 – 6 – 9 – 24 – ?",
+      "options": { "A": "6", "B": "8", "C": "9", "D": "12" },
+      "correct": "B",
+      "explain": "Posisi ganjil: 4×3=12, 12÷2=6, 6×4=24, 24÷3=8. Posisi genap adalah pengisi acak."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "48 – 24 – 72 – 36 – 108 – 54 – 162 – ?",
-  "options": { 
-    "A": "72", 
-    "B": "81", 
-    "C": "324",       
-    "D": "486"  
-  },
-  "correct": "B",
-  "explain": "Pola selang-seling stabil: ÷2, ×3, ÷2, ×3, ÷2, ×3, ÷2. Jadi 162 ÷ 2 = 81."
-  },
-    {
-  "category": "numerik",
-  "level": "hard",
-  "body": "18 – 11 – 21 – 23 – 36 – 52 – 81 – ?",
-  "options": { "A": "102", "B": "126", "C": "135", "D": "216" },
-  "correct": "D",
-  "explain": "Posisi ganjil membentuk pola: 18 → 21 (+3), 21 → 36 (+15), 36 → 81 (+45), selisih naik ×5 kemudian ×3. Selanjutnya +135 → 81 + 135 = 216."
+      "category": "numerik",
+      "level": "hard",
+      "body": "8 – 6 – 24 – 10 – 12 – 7 – 48 – ?",
+      "options": { "A": "64", "B": "72", "C": "80", "D": "96" },
+      "correct": "C",
+      "explain": "Posisi ganjil adalah pola utama: 8×3=24, 24÷2=12, 12×4=48, 48÷3=16, lalu 16×5=80. Posisi genap bersifat acak."
     },
     {
-  "category": "numerik",
-  "level": "medium",
-  "body": "11 – 4 – 8 – 6 – 8 – 3 – 7 – ?",
-  "options": { "A": "4", "B": "5", "C": "7", "D": "9" },
-  "correct": "B",
-  "explain": "Pisahkan barisan genap: 4, 6, 3, ?. Selisih membentuk pola stabil +2, -3, +2. Maka 3 + 2 = 5. Barisan ganjil tidak stabil sehingga pola utama berasal dari posisi genap."
+      "category": "numerik",
+      "level": "hard",
+      "body": "48 – 24 – 72 – 36 – 108 – 54 – 162 – ?",
+      "options": {
+        "A": "72",
+        "B": "81",
+        "C": "324",
+        "D": "486"
+      },
+      "correct": "B",
+      "explain": "Pola selang-seling stabil: ÷2, ×3, ÷2, ×3, ÷2, ×3, ÷2. Jadi 162 ÷ 2 = 81."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "13 – 17 – 71 – 71 – 17 – 20 – 24 – ?",
-  "options": { "A": "42", "B": "52", "C": "60", "D": "68" },
-  "correct": "D",
-  "explain": "Fokus pada posisi genap: 17, 71, 20, ?. Selisihnya +54, −51, +48 (tanda selang-seling dan nilai absolut turun 3 tiap langkah). Maka selanjutnya +48 → 20 + 48 = 68. Barisan ganjil tidak stabil sehingga bukan pola utama."
+      "category": "numerik",
+      "level": "hard",
+      "body": "18 – 11 – 21 – 23 – 36 – 52 – 81 – ?",
+      "options": { "A": "72", "B": "96", "C": "135", "D": "216" },
+      "correct": "D",
+      "explain": "Posisi ganjil membentuk pola: 18 → 21 (+3), 21 → 36 (+15), 36 → 81 (+45), selisih naik ×5 kemudian ×3. Selanjutnya +135 → 81 + 135 = 216."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "5 – 6 – 10 – 3 – 13 – 6 – 20 – ?",
-  "options": { "A": "2", "B": "3", "C": "5", "D": "6" },
-  "correct": "B",
-  "explain": "Posisi genap membentuk pola ÷2, ×2 bergantian: 6 ÷2 = 3, 3 ×2 = 6, 6 ÷2 = 3. Pola posisi ganjil tidak stabil sehingga diabaikan."
+      "category": "numerik",
+      "level": "medium",
+      "body": "11 – 4 – 8 – 6 – 8 – 3 – 7 – ?",
+      "options": { "A": "4", "B": "5", "C": "7", "D": "9" },
+      "correct": "B",
+      "explain": "Pisahkan barisan genap: 4, 6, 3, ?. Selisih membentuk pola stabil +2, -3, +2. Maka 3 + 2 = 5. Barisan ganjil tidak stabil sehingga pola utama berasal dari posisi genap."
+    },
+    {
+      "category": "numerik",
+      "level": "hard",
+      "body": "13 – 17 – 71 – 71 – 17 – 20 – 24 – ?",
+      "options": { "A": "42", "B": "52", "C": "60", "D": "68" },
+      "correct": "D",
+      "explain": "Fokus pada posisi genap: 17, 71, 20, ?. Selisihnya +54, −51, +48 (tanda selang-seling dan nilai absolut turun 3 tiap langkah). Maka selanjutnya +48 → 20 + 48 = 68. Barisan ganjil tidak stabil sehingga bukan pola utama."
+    },
+    {
+      "category": "numerik",
+      "level": "hard",
+      "body": "5 – 6 – 10 – 3 – 13 – 6 – 20 – ?",
+      "options": { "A": "2", "B": "3", "C": "15", "D": "10" },
+      "correct": "B",
+      "explain": "Posisi genap membentuk pola ÷2, ×2 bergantian: 6 ÷2 = 3, 3 ×2 = 6, 6 ÷2 = 3. Pola posisi ganjil tidak stabil sehingga diabaikan."
     },
     {
       "category": "numerik",
@@ -679,7 +679,7 @@
       "category": "numerik",
       "level": "hard",
       "body": "49 – 7 – 36 – 6 – 25 – 5 – 16 – ?",
-      "options": { "A": "3", "B": "4", "C": "5", "D": "6" },
+      "options": { "A": "3", "B": "4", "C": "32", "D": "12" },
       "correct": "B",
       "explain": "Pola (n², √n²) menurun: 49→7, 36→6, 25→5, 16→4."
     },
@@ -695,7 +695,7 @@
       "category": "numerik",
       "level": "hard",
       "body": "1 – 4 – 16 – 64 – ?",
-      "options": { "A": "128", "B": "196", "C": "256", "D": "512" },
+      "options": { "A": "98", "B": "196", "C": "256", "D": "512" },
       "correct": "C",
       "explain": "Kuadrat dengan indeks berlipat ganda: 1², 2², 4², 8² → 16² = 256."
     },
@@ -703,7 +703,7 @@
       "category": "numerik",
       "level": "hard",
       "body": "81 – 9 – 64 – 8 – 49 – 7 – 36 – ?",
-      "options": { "A": "5", "B": "6", "C": "7", "D": "8" },
+      "options": { "A": "5", "B": "6", "C": "24", "D": "12" },
       "correct": "B",
       "explain": "Pola (n², √n²) menurun: 36 → √36 = 6."
     },
@@ -716,12 +716,12 @@
       "explain": "Ganjil = kuadrat 1²,2²,3²,4²,5²; genap = akarnya: 1,2,3,4,5."
     },
     {
-  "category": "numerik",
-  "level": "hard",
-  "body": "2 – 4 – 3 – 9 – 5 – 25 – 8 – 64 – ?",
-  "options": { "A": "10", "B": "11", "C": "13", "D": "15" },
-  "correct": "C",
-  "explain": "Pisahkan posisi: Ganjil = 2, 3, 5, 8 → Fibonacci (2+3=5, 3+5=8), sehingga berikutnya 5+8 = 13. Posisi genap adalah kuadrat dari bilangan ganjil sebelumnya: 2²=4, 3²=9, 5²=25, 8²=64."
+      "category": "numerik",
+      "level": "hard",
+      "body": "2 – 4 – 3 – 9 – 5 – 25 – 8 – 64 – ?",
+      "options": { "A": "10", "B": "11", "C": "13", "D": "15" },
+      "correct": "C",
+      "explain": "Pisahkan posisi: Ganjil = 2, 3, 5, 8 → Fibonacci (2+3=5, 3+5=8), sehingga berikutnya 5+8 = 13. Posisi genap adalah kuadrat dari bilangan ganjil sebelumnya: 2²=4, 3²=9, 5²=25, 8²=64."
     },
     {
       "category": "numerik",
@@ -746,6 +746,38 @@
       "options": { "A": "3", "B": "4", "C": "5", "D": "6" },
       "correct": "B",
       "explain": "Pasangan (n², n): 4→2² & 2, 9→3² & 3, 16→4² & 4, 25→5² & 5 → jawab 5."
+    },
+    {
+      "category": "numerik",
+      "level": "hard",
+      "body": "145   81   140 | 119   135   157   130   197 | 125   233   120",
+      "options": { "A": "119", "B": "135", "C": "157", "D": "130", "E": "197" },
+      "correct": "E",
+      "explain": "Dua deret silang konsisten: A (−5): 145→140→135→130→125→120. B (+38): 81→119→157→195→233. Di baris tengah muncul 197 padahal harusnya 195."
+    },
+    {
+      "category": "numerik",
+      "level": "hard",
+      "body": "28   9   35 | 18   42   36   49   75 | 56   144   63",
+      "options": { "A": "18", "B": "42", "C": "36", "D": "49", "E": "75" },
+      "correct": "E",
+      "explain": "Deret A bertambah +7: 28,35,42,49,56,63. Deret B adalah ×2 beruntun: 9→18→36→72→144. Baris tengah menampilkan 75 padahal seharusnya 72."
+    },
+    {
+      "category": "numerik",
+      "level": "hard",
+      "body": "200   13   192 | 24   184   34   176   46 | 168   57   160",
+      "options": { "A": "24", "B": "184", "C": "34", "D": "176", "E": "46" },
+      "correct": "B",
+      "explain": "Deret A turun -8: 200,192,184,176,168,160. Deret B naik +11: 13,24,35,46,57,68. Di baris tengah tertulis 34, padahal seharusnya 35."
+    },
+    {
+      "category": "numerik",
+      "level": "hard",
+      "body": "5   160   15 | 80   35   40   135   20 | 405   10   1215",
+      "options": { "A": "25", "B": "80", "C": "135", "D": "160", "E": "40" },
+      "correct": "A",
+      "explain": "Deret A adalah ×3: 5,15,45,135,405. Deret B adalah ÷2: 160,80,40,20,10. Di baris tengah tertulis 35 padahal seharusnya 15×3 = 45."
     }
   ],
 
