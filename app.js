@@ -8,12 +8,14 @@ const FORCE_BALANCED = new Set(["silogisme", "pengetahuan_umum"]);
 let RAW = [];
 let QUIZ = [];
 let idx = 0;
-let score = 0; // number of correct answers
+let score = 0;
 let answered = false;
 let tStart = 0;
 let deadline = 0;
 let tickHandle = null;
-let chosen = { category: "numerik", level: "easy", limit: null };
+let chosen = { category: "numerik", level: "easy", limit: null, timed: true };
+let settings = { timed: true };
+let advancing = false;
 
 const $ = (s) => document.querySelector(s);
 
@@ -24,6 +26,23 @@ $("#retryBtn").addEventListener("click", () => startQuiz());
 $("#toMenuBtn").addEventListener("click", backToMenu);
 // lock level silo dan PU
 $("#category").addEventListener("change", updateLevelLock);
+
+$("#nextBtn").addEventListener("click", onNextClick);
+function onNextClick() {
+  // Di mode dengan waktu, tombol Next dinonaktifkan (tidak boleh manual lanjut)
+  if (settings.timed) return;
+  // Di mode tanpa waktu, hanya boleh lanjut setelah menjawab.
+  if (!answered) return; // kalau mau boleh skip tanpa jawab, ubah guard ini
+  goNext();
+}
+
+function setMetaVisible(on) {
+  const el = document.getElementById("metaBar");
+  if (!el) return;
+  el.hidden = !on;
+  if (on) el.classList.remove("hidden");
+  else el.classList.add("hidden");
+}
 
 async function boot() {
   try {
@@ -46,7 +65,8 @@ function showMenu() {
   $("#menuCard").hidden = false;
   $("#quizCard").hidden = true;
   $("#resultCard").hidden = true;
-  $("#metaBar").hidden = true;
+  // $("#metaBar").hidden = true;
+  setMetaVisible(false);
 }
 
 function backToMenu() {
@@ -58,7 +78,13 @@ function startFromMenu() {
   const category = $("#category").value;
   const level = $("#level").value;
   const limit = parseInt($("#limit").value || "0", 10);
-  chosen = { category, level, limit: limit > 0 ? limit : null };
+  const modeVal = $("#mode").value;
+  settings.timed = modeVal === "timed";
+  chosen = {
+    category,
+    level,
+    limit: limit > 0 ? limit : null,
+  };
   startQuiz();
 }
 
@@ -82,6 +108,7 @@ function startQuiz() {
   const category = chosen.category;
   const level = chosen.level;
   const desiredTotal = chosen.limit || null; // null => pakai semua
+  setMetaVisible(true);
 
   // Kumpulan soal per kategori
   const catAll = RAW.filter((q) => q.category === category);
@@ -179,52 +206,10 @@ function levelLabel(lv) {
   return m[lv] || lv;
 }
 
-// pemersih start yang sama untuk semua mode
-function prepareAndStart(pool, label) {
-  QUIZ = pool;
-  idx = 0;
-  score = 0;
-  $("#score").textContent = score;
-  $("#total").textContent = QUIZ.length;
-  $("#catLabel").textContent = labelCategory(chosen.category);
-  $("#lvlLabel").textContent = label;
-  $("#metaBar").hidden = false;
-
-  $("#menuCard").hidden = true;
-  $("#resultCard").hidden = true;
-  $("#quizCard").hidden = false;
-
-  const t2 = document.getElementById("timerInline");
-  if (t2) t2.textContent = PER_QUESTION_SECONDS;
-
-  renderQuestion();
-}
-
 // helper label untuk start
 function levelLabel(lv) {
   const m = { easy: "Easy", medium: "Medium", hard: "Hard" };
   return m[lv] || lv;
-}
-
-// pemersih start yang sama untuk semua mode
-function prepareAndStart(pool, label) {
-  QUIZ = pool;
-  idx = 0;
-  score = 0;
-  $("#score").textContent = score;
-  $("#total").textContent = QUIZ.length;
-  $("#catLabel").textContent = labelCategory(chosen.category);
-  $("#lvlLabel").textContent = label;
-  $("#metaBar").hidden = false;
-
-  $("#menuCard").hidden = true;
-  $("#resultCard").hidden = true;
-  $("#quizCard").hidden = false;
-
-  const t2 = document.getElementById("timerInline");
-  if (t2) t2.textContent = PER_QUESTION_SECONDS;
-
-  renderQuestion();
 }
 
 function labelCategory(c) {
@@ -262,14 +247,17 @@ function prepareAndStart(pool, label) {
   $("#total").textContent = QUIZ.length;
   $("#catLabel").textContent = labelCategory(chosen.category);
   $("#lvlLabel").textContent = label;
-  $("#metaBar").hidden = false;
+  setMetaVisible(true);
+
+  // Sembunyikan elemen timer & progress bar jika mode tanpa waktu
+  const timerElement = $(".meta-timer");
+  const progressBar = $(".progress");
+  if (timerElement) timerElement.hidden = !settings.timed;
+  if (progressBar) progressBar.hidden = !settings.timed;
 
   $("#menuCard").hidden = true;
   $("#resultCard").hidden = true;
   $("#quizCard").hidden = false;
-
-  const t2 = document.getElementById("timerInline");
-  if (t2) t2.textContent = PER_QUESTION_SECONDS;
 
   renderQuestion();
 }
@@ -303,7 +291,9 @@ function renderQuestion() {
   $("#opts").innerHTML = "";
   $("#feedback").textContent = "";
   $("#feedback").className = "feedback";
-  $("#nextBtn").disabled = true;
+  // In timed mode Next should be disabled (auto-advance only). In untimed,
+  // Next is enabled only after answering.
+  $("#nextBtn").disabled = settings.timed;
 
   Object.entries(q.options).forEach(([key, text]) => {
     const btn = document.createElement("button");
@@ -314,13 +304,47 @@ function renderQuestion() {
   });
 
   answered = false;
-  tStart = Date.now();
-  deadline = tStart + PER_QUESTION_SECONDS * 1000;
 
-  const t2 = document.getElementById("timerInline");
-  if (t2) t2.textContent = PER_QUESTION_SECONDS;
+  // handle UI timer & progress per mode
+  const timebarWrap = document.querySelector(".progress");
+  const timerTop = document.getElementById("timer"); // di meta bar
+  const timerInline = document.getElementById("timerInline"); // pill mobile
 
-  startTick();
+  if (settings.timed) {
+    // tampilkan progress & timer
+    if (timebarWrap) timebarWrap.classList.remove("hidden");
+    if (
+      timerTop &&
+      timerTop.parentElement &&
+      timerTop.parentElement.parentElement
+    )
+      timerTop.parentElement.parentElement.classList.remove("hidden"); // span.timer ada di dalam .meta
+    if (timerInline && timerInline.closest)
+      timerInline.closest(".only-mobile").classList.remove("hidden");
+
+    // inisialisasi waktu untuk soal saat ini
+    tStart = Date.now();
+    deadline = tStart + PER_QUESTION_SECONDS * 1000;
+    if (timerTop) timerTop.textContent = PER_QUESTION_SECONDS;
+    if (timerInline) timerInline.textContent = PER_QUESTION_SECONDS;
+
+    startTick(); // <— hanya start tick jika timed
+  } else {
+    // sembunyikan progress & timer
+    if (timebarWrap) timebarWrap.classList.add("hidden");
+    if (
+      timerTop &&
+      timerTop.parentElement &&
+      timerTop.parentElement.parentElement
+    )
+      timerTop.parentElement.parentElement.classList.add("hidden"); // sembunyi chip timer di meta
+    if (timerInline && timerInline.closest)
+      timerInline.closest(".only-mobile").classList.add("hidden");
+
+    // set angka agar aman (tidak berjalan)
+    if (timerTop) timerTop.textContent = "–";
+    if (timerInline) timerInline.textContent = "–";
+  }
 }
 
 function startTick() {
@@ -335,25 +359,40 @@ function stopTick() {
   }
 }
 function tick() {
+  if (!settings.timed) return;
   const now = Date.now();
   const left = Math.max(0, Math.floor((deadline - now) / 1000));
-  $("#timer").textContent = left;
-  const t2 = document.getElementById("timerInline");
-  if (t2) t2.textContent = left;
+
+  const timerElement = $("#timer");
+  if (timerElement) {
+    timerElement.textContent = left;
+  }
 
   const total = PER_QUESTION_SECONDS * 1000;
   const used = Math.min(total, now - tStart);
   const pct = Math.max(0, Math.min(100, ((total - used) / total) * 100));
-  $("#timebar").style.width = pct + "%";
+
+  const timeBar = $("#timebar");
+  if (timeBar) {
+    timeBar.style.width = pct + "%";
+  }
 
   if (now >= deadline && !answered) {
     answered = true;
     stopTick();
     const q = QUIZ[idx];
+    // tampilkan feedback tetapi jangan "memilih" jawaban pengguna otomatis;
+    // hanya disable opsi tanpa menandai correct/wrong
     showFeedback(false, "(Waktu habis) " + correctSentence(q));
-    lockOptions(q.correct, null);
-    $("#nextBtn").disabled = false;
-    setTimeout(goNext, 1500);
+    disableOptionsNoHighlight();
+    if (!settings.timed) $("#nextBtn").disabled = false;
+
+    // hanya timed yang auto-next
+    if (settings.timed) {
+      setTimeout(() => {
+        if (!advancing) goNext();
+      }, 1500);
+    }
   }
 }
 
@@ -375,6 +414,16 @@ function lockOptions(correctKey, chosenKey) {
   });
 }
 
+// Disable opsi tanpa menandai correct/wrong (digunakan saat timeout agar tidak
+// terlihat seperti aplikasi "memilih" jawaban sendiri)
+function disableOptionsNoHighlight() {
+  [...document.querySelectorAll(".opt")].forEach((btn) => {
+    btn.classList.add("disabled");
+    btn.disabled = true;
+    // jangan tambahkan kelas correct/wrong
+  });
+}
+
 function handleAnswer(q, key) {
   if (answered) return;
   answered = true;
@@ -382,6 +431,8 @@ function handleAnswer(q, key) {
 
   const isCorrect = key === q.correct;
   if (isCorrect) score++;
+  const scEl = $("#score");
+  if (scEl) scEl.textContent = score;
 
   lockOptions(q.correct, key);
   showFeedback(
@@ -389,8 +440,15 @@ function handleAnswer(q, key) {
     (isCorrect ? "Benar! " : "Salah. ") + correctSentence(q)
   );
 
-  $("#nextBtn").disabled = false;
-  setTimeout(goNext, 1200);
+  if (!settings.timed) $("#nextBtn").disabled = false;
+
+  if (settings.timed) {
+    // timed: auto-next setelah delay
+    setTimeout(() => {
+      if (!advancing) goNext();
+    }, 1200);
+  } else {
+  }
 }
 
 function showFeedback(ok, text) {
@@ -398,20 +456,37 @@ function showFeedback(ok, text) {
   $("#feedback").className = "feedback " + (ok ? "good" : "bad");
 }
 
+// function goNext() {
+//   if (idx < QUIZ.length - 1) {
+//     idx++;
+//     renderQuestion();
+//   } else {
+//     showResult();
+//   }
+// }
 function goNext() {
+  if (advancing) return; // cegah dobel
+  advancing = true;
+
   if (idx < QUIZ.length - 1) {
     idx++;
     renderQuestion();
   } else {
     showResult();
   }
+
+  // reset flag setelah render flush
+  setTimeout(() => {
+    advancing = false;
+  }, 0);
 }
 
 function showResult() {
   stopTick();
-  $("#metaBar").hidden = true; // Sembunyikan meta bar terlebih dahulu
+  // $("#metaBar").hidden = true; // Sembunyikan meta bar terlebih dahulu
   $("#quizCard").hidden = true;
   $("#resultCard").hidden = false;
+  setMetaVisible(false);
 
   const total = QUIZ.length;
   const correct = score;

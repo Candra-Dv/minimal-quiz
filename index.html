@@ -42,6 +42,14 @@
           </select>
 
           <div class="inline">
+            <label class="label">Mode</label>
+            <select id="mode" class="input">
+              <option value="timed" selected>Dengan Waktu</option>
+              <option value="untimed">Tanpa Waktu</option>
+            </select>
+          </div>
+
+          <div class="inline">
             <label class="label">Jumlah Soal</label>
             <select id="limit" class="input">
               <option value="">Semua Soal</option>
@@ -81,7 +89,7 @@
         <span class="pipe-sep"></span>
 
         <span class="meta-item meta-timer">
-          <span class="meta-ic" aria-hidden="true">⏱️</span>
+          <span class="meta-ic" id="timerChip" aria-hidden="true">⏱️</span>
           <span><b id="timer">30</b>s</span>
         </span>
       </div>
